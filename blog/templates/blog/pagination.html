@@ -1,0 +1,22 @@
+<div class="pagination">
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+    {% comment %} {% else %}
+        <a>&laquo;</a> {% endcomment %}
+    {% endif %}
+
+    {% for i in page_obj.paginator.page_range %}
+        {% if page_obj.number == i %}
+            <a style="background-color: #031629; color: white;" href="#">{{ i }} </a>
+        {% else %}
+            <a href="?page={{ i }}">{{ i }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+    {% comment %} {% else %}
+        <a>&raquo;</a> {% endcomment %}
+    {% endif %}
+</div>
+

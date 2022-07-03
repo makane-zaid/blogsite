@@ -1,0 +1,12 @@
+{% extends './blog/base.html' %}
+
+{% block content %}
+    <h2>Sign Up</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-secondary" style="margin:10px;">Sign Up</button>
+    </form>
+    <form action="{%url 'login'%}">
+        <button type="submit" class="save btn btn-secondary" style="margin:10px;color:grey;border-color:grey;"> Log In</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+
+{% block content %}
+    <h2>Delete Post?</h2>
+        <form action="" method ='POST'>{% csrf_token %}
+        <p>Delete "{{ object }}"?</p>
+    <input type="submit" class="save btn btn-secondary" style="width:10%;margin:10px;" value="OK"> 
+    </form>
+    <form action="{%url 'post_list'%}">
+        <button type="submit" class="save btn btn-secondary" style="margin:10px;color:grey;border-color:grey;"> Cancel</button>
+    </form>
+{% endblock %}
+
+

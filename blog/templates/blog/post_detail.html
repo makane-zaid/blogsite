@@ -1,11 +1,14 @@
 {% extends 'blog/base.html' %}
-
+<input type="text" id ="mySearch" name="search" placeholder="Search.." onkeyup="keyPressed()">
 {% block content %}
     <article class="post">
-        <aside class="actions">
+        <aside class="actions" method="post">
             {% if user.is_authenticated %}
-                <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
+                <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}" style="margin-left:10px"> 
                     {% include './icons/pencil-fill.svg' %}
+                </a>
+                <a class="btn btn-secondary" href="{% url 'post_delete' pk=post.pk %}" style="margin:10px" > 
+                    {% include './icons/trash1.svg' %}
                 </a>
             {% endif %}
         </aside>
